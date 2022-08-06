@@ -1,0 +1,11 @@
+*.log
+*.pyc
+*.todo
+
+__pycache__/
+env/
+
+db.sqlite3
+dev_settings.py
+
+.DS_Store
