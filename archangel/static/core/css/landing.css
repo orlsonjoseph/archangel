@@ -1,0 +1,169 @@
+.btn-xl {
+    padding: 1.25rem 2.25rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10rem;
+}
+
+hr.divider {
+    height: 0.2rem;
+    max-width: 4.25rem;
+    margin: 1.5rem auto;
+    background-color: var(--primary-color);
+    opacity: 1;
+}
+
+hr.divider-light {
+    background-color: var(--secondary-color);
+}
+
+a.btn-outline-primary {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+
+    border: none;
+}
+
+a.btn-outline-primary:hover,
+a.btn-outline-primary:focus {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.navbar {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    background-color: white;
+    transition: background-color 0.2s ease;
+}
+
+.navbar .navbar-brand {
+    font-weight: 700;
+    font-size: x-large;
+    color: black;
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+    color: black;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.75rem 0;
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover,
+.navbar .navbar-nav .nav-item .nav-link:active {
+    color: var(--secondary-color);
+}
+
+.navbar .navbar-nav .nav-item .nav-link.active {
+    color: var(--secondary-color) !important;
+}
+
+@media (max-width: 992px) {
+    .navbar .navbar-toggler:active {
+        box-shadow: none;
+    }
+
+    .navbar .navbar-collapse {
+        justify-content: center;
+    }
+     
+    .navbar .navbar-collapse .btn {
+        background-color: white;
+        border: 1px solid var(--secondary-color);
+    }
+
+    #page-top {
+        height: 100vh;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .navbar .navbar-collapse .btn {
+        position: relative;
+
+        top: 0.25rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        background-color: transparent;
+    }
+    .navbar .navbar-brand {
+        color: rgba(255, 255, 255, 0.7);
+    }
+    .navbar .navbar-brand:hover {
+        color: #fff;
+    }
+    .navbar .navbar-nav .nav-item .nav-link {
+        color: rgba(255, 255, 255, 0.7);
+        padding: 0 1rem;
+    }
+    .navbar .navbar-nav .nav-item .nav-link:hover {
+        color: white;
+    }
+    .navbar .navbar-nav .nav-item:last-child .nav-link {
+        padding-right: 0;
+    }
+    .navbar.navbar-shrink {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        background-color: white;
+    }
+    .navbar.navbar-shrink .navbar-brand {
+        color: black;
+    }
+    .navbar.navbar-shrink .navbar-brand:hover {
+        color: var(--secondary-color);
+    }
+    .navbar.navbar-shrink .navbar-nav .nav-item .nav-link {
+        color: black;
+    }
+    .navbar.navbar-shrink .navbar-nav .nav-item .nav-link:hover {
+        color: var(--secondary-color);
+    }
+    .navbar.navbar-shrink a.btn-outline-primary {
+        background-color: white;
+        color: var(--secondary-color);
+
+        border: 2px solid var(--secondary-color);
+    }
+}
+
+header.masthead {
+    padding-top: 10rem;
+    background: linear-gradient(var(--primary-color-rgba) 0%, var(--primary-color-rgba) 100%), url("https://picsum.photos/id/180/1900/1267");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+header.masthead h1,
+header.masthead .h1 {
+    font-size: 2.25rem;
+}
+
+@media (min-width: 992px) {
+    header.masthead {
+        height: 100vh;
+        min-height: 40rem;
+        padding-top: 4.5rem;
+        padding-bottom: 0;
+    }
+    header.masthead p {
+        font-size: 1.15rem;
+    }
+    header.masthead h1,
+    header.masthead .h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    header.masthead h1,
+    header.masthead .h1 {
+        font-size: 3.5rem;
+    }
+}

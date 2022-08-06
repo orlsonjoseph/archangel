@@ -40,8 +40,10 @@ INSTALLED_APPS = [
 
     # Third-party applications
     'rest_framework',
+    'rest_framework.authtoken',
 
     # Local applications
+    'api',
     'core',
 ]
 
@@ -91,8 +93,19 @@ DATABASES = {
 
 # Authentication configuration
 
-AUTH_USER_MODEL = 'core.CustomUser'
+LOGIN_URL = 'core:login'
 
+AUTH_USER_MODEL = 'core.CustomUser'
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'archangel.backends.CustomUserModelBackend',
+    ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Login {% endblock %}
+
+{% block head %}
+<link href="{% static 'core/css/login.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navigation %}
+
+{% endblock %}
+
+{% block master %}
+{{ form.errors }}
+<form action="{% url 'core:login' %}" method="post">
+    {% csrf_token %}
+    <tr>
+        <th><label for="id_email">Email address:</label></th>
+        <td>
+
+            <input type="email" name="email" autofocus autocapitalize="none" autocomplete="email" maxlength="254"
+                required id="id_email">
+
+
+        </td>
+    </tr>
+
+    <tr>
+        <th><label for="id_password">Password:</label></th>
+        <td>
+
+            <input type="password" name="password" autocomplete="current-password" required id="id_password">
+
+
+
+        </td>
+    </tr>
+
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}
+
+{% block script %}
+<script defer src="{% static 'core/js/login.js' %}"></script>
+{% endblock%}

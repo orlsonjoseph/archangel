@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Connect {% endblock %}
+
+{% block head %}
+<link href="{% static 'core/css/connect.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navigation %}
+
+{% endblock %}
+
+{% block master %}
+{{ form.errors }}
+<form action="#" method="post" id="connectForm">
+    {% csrf_token %}
+    <input type="hidden" name="token" id="auth_token" value="{{ token }}">
+    <input type="submit" value="Connect">
+</form>
+{% endblock %}
+
+{% block script %}
+<script defer src="{% static 'core/js/connect.js' %}"></script>
+{% endblock%}
