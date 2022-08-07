@@ -5,13 +5,13 @@
 }
 
 :root {
-    --primary-color: #006DAF;    
-    --primary-color-rgba: rgba(0, 109, 175, 0.5);
-    --secondary-color: #358DCE;
+    --primary-color: #B32428;    
+    --secondary-color: #FEE5E6;
+    --tertiary-color: #B06C72;
 
     --white-color: #FFFFFF;
     --washed-white: #E1E1E1;
-    --primary-gray: #6C6C6C;
+    --primary-gray: #999999;
 }
 
 html, body {

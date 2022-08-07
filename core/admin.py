@@ -7,11 +7,11 @@ from core.models import CustomUser
 class CustomUserAdmin(UserAdmin):
     model = CustomUser
 
-    list_display = ('email', 'is_staff', 'is_active',)
+    list_display = ('email', 'is_staff', 'is_active', 'email_verified')
     list_filter = ('email', 'is_staff', 'is_active',)
 
     fieldsets = (
-        (None, {'fields': ('email', 'password')}),
+        (None, {'fields': ('email', 'email_verified', 'password')}),
         ('Permissions', {'fields': ('is_staff', 'is_active')}),
     )
 

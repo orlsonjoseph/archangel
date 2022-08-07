@@ -3,7 +3,7 @@ document.getElementById('jQueryLoad').addEventListener('load', function () {
 
     $("#connectForm").submit(function (event) {
         event.preventDefault();
-        console.log('Existing token', window.localStorage.getItem('keep-extension-token'));
-        window.localStorage.setItem('keep-extension-token', authentication_token);
+        console.log('Existing token', window.localStorage.getItem('nodraft-extension-token'));
+        window.localStorage.setItem('nodraft-extension-token', authentication_token);
     });
 });
