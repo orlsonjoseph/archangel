@@ -30,7 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'nodraft.herokuapp.com',
-    'nodraft.me',
+    'www.nodraft.me',
 
     # Development
     '127.0.0.1', 'localhost'
