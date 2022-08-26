@@ -1,7 +1,9 @@
 asgiref==3.5.2
 certifi==2021.10.8
 charset-normalizer==2.0.12
-Django==4.1
+dj-database-url==1.0.0
+Django==4.0
+django-heroku==0.3.1
 djangorestframework==3.13.1
 idna==3.3
 irc==20.0.0
@@ -14,9 +16,11 @@ jaraco.stream==3.0.3
 jaraco.text==3.7.0
 more-itertools==8.13.0
 numpy==1.22.3
+psycopg2==2.9.3
 pytz==2022.1
 requests==2.27.1
 sqlparse==0.4.2
 tempora==5.0.1
+tzdata==2022.2
 urllib3==1.26.8
 whitenoise==6.2.0

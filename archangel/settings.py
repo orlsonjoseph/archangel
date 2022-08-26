@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import django_heroku
+# import dj_database_url
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +28,13 @@ SECRET_KEY = 'django-insecure-1=!&q)y@1^o+6m^!*@f9-*f^+i2#y!z_54h4r69fa_pkaj^-^&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'nodraft.herokuapp.com',
+    'nodraft.me',
+
+    # Development
+    '127.0.0.1', 'localhost'
+]
 
 
 # Application definition
@@ -146,7 +155,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_DIRS = (BASE_DIR / 'archangel/static', )
 
@@ -160,3 +169,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Activate Django-Heroku
+# django_heroku.settings(locals())
