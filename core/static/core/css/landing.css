@@ -1,0 +1,120 @@
+html {
+    scroll-padding-top: calc(4.5rem - 1px);
+}
+
+.page-section {
+    padding: 8rem 0;
+}
+
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.btn-xl {
+    padding: 1.25rem 2.25rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+}
+
+hr.divider {
+    height: 0.2rem;
+    max-width: 3.25rem;
+    margin: 1.5rem auto;
+    background-color: var(--bs-primary);
+    opacity: 1;
+}
+
+hr.divider-light {
+    background-color: #fff;
+}
+
+#mainNav {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+    transition: background-color 0.2s ease;
+}
+
+#mainNav .navbar-brand {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#mainNav .navbar-brand:hover {
+    color: #fff;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.75rem 0;
+}
+
+@media (min-width: 992px) {
+    #mainNav {
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    #mainNav .navbar-nav .nav-item .nav-link {
+        padding: 0 1rem;
+    }
+
+    #mainNav .navbar-nav .nav-item .nav-link:hover {
+        color: #fff;
+    }
+
+    #mainNav .navbar-nav .nav-item:last-child .nav-link {
+        padding-right: 0;
+    }
+
+    #mainNav.navbar-shrink {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        background-color: #fff;
+    }
+}
+
+header.masthead {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 4.5rem);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 90%, #000 100%), url("https://picsum.photos/id/179/1920/1080");
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+header.masthead h1,
+header.masthead .h1 {
+    font-size: 2.25rem;
+}
+
+@media (min-width: 992px) {
+    header.masthead {
+        height: 100vh;
+        min-height: 40rem;
+        padding-top: 4.5rem;
+        padding-bottom: 0;
+    }
+
+    header.masthead p {
+        font-size: 1.15rem;
+    }
+
+    header.masthead h1,
+    header.masthead .h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    header.masthead h1,
+    header.masthead .h1 {
+        font-size: 3.5rem;
+    }
+}

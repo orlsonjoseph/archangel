@@ -1,11 +1,11 @@
 * {
     border-radius: 0 !important;
 
-    font-family: "Raleway", sans-serif;
+    font-family: "Raleway", sans-serif !important;
 }
 
 :root {
-    --primary-color: #B32428;    
+    --primary-color: #B32428;
     --secondary-color: #FEE5E6;
     --tertiary-color: #B06C72;
 
@@ -14,7 +14,8 @@
     --primary-gray: #999999;
 }
 
-html, body {
+html,
+body {
     width: 100%;
     height: 100%;
 }

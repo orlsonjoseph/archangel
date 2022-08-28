@@ -4,17 +4,42 @@
 {% block title %} Welcome {% endblock %}
 
 {% block head %}
-<link href="{% static 'core/css/landing.css' %}" rel="stylesheet">
+<link href="{% static 'core/css/landing.css' %}" rel="stylesheet"
+    type="text/css" />
 {% endblock %}
 
 {% block navigation %}
-<a href="{% url 'core:login' %}">Login</a>
-
+{% include 'include/navigation.html' %}
 {% endblock %}
 
 {% block master %}
 <!-- Masthead -->
+<header class="masthead">
+    <div class="container px-4 px-lg-5 h-100">
+        <div class="row gx-4 gx-lg-5 h-100 align-items-center
+            justify-content-center text-center">
+            <div class="col-lg-8 align-self-end">
+                <h1 class="text-white font-weight-bold">Supercharge your
+                    browsing experience</h1>
+                <hr class="divider" />
+            </div>
+            <div class="col-lg-8 align-self-baseline">
+                <h4 class="text-white-75 mb-5">
+                    Dynamic. Intuitive. Visual.
+                </h4>
+                <a class="btn btn-primary btn-xl" href="#about">Get started</a>
+                <a class="btn btn-light btn-xl" href="#about">Download
+                    extension</a>
+            </div>
+        </div>
+    </div>
+</header>
 
+<!-- Footer-->
+<footer class="bg-light py-5">
+    <div class="container px-4 px-lg-5"><div class="small text-center
+            text-muted">Copyright &copy; {% now 'Y' %}- Nodraft </div></div>
+</footer>
 {% endblock %}
 
 {% block script %}
