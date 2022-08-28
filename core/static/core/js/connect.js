@@ -1,4 +1,4 @@
-$(window).load(function () {
+$(window).on('load', function () {
   console.log("ready");
   const authentication_token = $("#auth_token").val();
   const editorExtensionId = "bjemlddlpahnmmjidgpobkbpkdackejp";
