@@ -1,4 +1,5 @@
 document.getElementById('jQueryLoad').addEventListener('load', function () {
+    console.log("ready");
     const authentication_token = $("#auth_token").val();
     const editorExtensionId = "mchcicmnbpcopfmklilbmbjgdmhlkapf";
 
