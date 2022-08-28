@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Get Started {% endblock %}
+
+{% block head %}
+<link href="{% static 'core/css/login.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+<section class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-5">
+            <div class="wrap">
+                <div class="img" style="background-image:
+                    url('https://picsum.photos/id/1073/500/');"></div>
+
+                <div class="d-flex px-4 pt-3">
+                    <div class="w-100">
+                        <h4 class="mb-4">Create an account</h4>
+                    </div>
+
+                    <div class="w-100">
+                        <p class="social-media d-flex justify-content-end">
+                            <a href="#"
+                                class="social-icon d-flex align-items-center
+                                justify-content-center">
+                                <i class="bi bi-google"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <form class="px-4 py-0" action="{% url 'core:register' %}""
+                    method="POST"> {% csrf_token %}
+                    <div class="form-group">
+                        <input id="email" type="email" class="form-control"
+                            name="email" required>
+                        <label class="form-control-placeholder" for="email">E-mail</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input id="password-1" type="password"
+                            class="form-control" name="password1" required>
+                        <label class="form-control-placeholder"
+                            for="password-1">Password</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input id="password-2" type="password"
+                            class="form-control" name="password2" required>
+                        <label class="form-control-placeholder"
+                            for="password-2">Password (again)</label>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="form-control btn
+                            btn-primary submit px-2">Create an account</button>
+                    </div>
+
+                    <div class="form-group d-md-flex">
+                        <div class="w-100 text-center">
+                            <a href="{% url 'core:login' %}">Log in instead</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'core/js/login.js' %}"></script>
+{% endblock %}
