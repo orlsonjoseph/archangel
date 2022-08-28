@@ -5,7 +5,7 @@ document.getElementById('jQueryLoad').addEventListener('load', function () {
     $("#connectForm").submit(function (event) {
         event.preventDefault();
 
-        alert("Making request");
+        console.log("Making request");
 
         // Make a simple request:
         chrome.runtime.sendMessage(editorExtensionId, { token: authentication_token },
