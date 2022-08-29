@@ -3,9 +3,11 @@ from django.contrib.auth import get_user_model
 
 from datetime import datetime
 
+# Create your models here.
+
 CustomUser = get_user_model()
 
-# Create your models here.
+
 class Bookmark(models.Model):
     url = models.URLField(unique=True)
 
@@ -21,14 +23,17 @@ class Bookmark(models.Model):
 
     def __str__(self) -> str:
         return self.url
-    
+
     class Meta:
         ordering = ('-added', )
 
+
 class BookmarkInstance(models.Model):
-    bookmark = models.ForeignKey(Bookmark, related_name='saved_instances', verbose_name='bookmark', on_delete=models.CASCADE)
-    user = models.ForeignKey(CustomUser, related_name='saved_bookmarks', verbose_name='user', on_delete=models.CASCADE)
-    
+    bookmark = models.ForeignKey(
+        Bookmark, related_name='saved_instances', verbose_name='bookmark', on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, related_name='saved_bookmarks',
+                             verbose_name='user', on_delete=models.CASCADE)
+
     note = models.TextField(blank=True)
 
     saved = models.DateTimeField(default=datetime.now)
@@ -39,13 +44,14 @@ class BookmarkInstance(models.Model):
         self.bookmark = bookmark
 
         super(BookmarkInstance, self).save(force_insert, force_update)
-    
+
     def delete(self):
         bookmark = self.bookmark
         super(BookmarkInstance, self).delete()
 
-        if bookmark.saved_instances.all().count() == 0: bookmark.delete()
-    
+        if bookmark.saved_instances.all().count() == 0:
+            bookmark.delete()
+
     def __str__(self) -> str:
         return f"{self.bookmark} for {self.user}"
 

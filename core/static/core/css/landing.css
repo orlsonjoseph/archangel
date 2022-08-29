@@ -39,7 +39,7 @@ hr.divider-light {
 #mainNav .navbar-brand {
     font-weight: 700;
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.85);
 }
 
 #mainNav .navbar-brand:hover {
@@ -47,7 +47,7 @@ hr.divider-light {
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.6);
     font-weight: 700;
     font-size: 0.85rem;
     padding: 0.75rem 0;
@@ -74,6 +74,10 @@ hr.divider-light {
     #mainNav.navbar-shrink {
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
         background-color: #fff;
+    }
+
+    #navbarResponsive {
+        justify-content: right;
     }
 }
 

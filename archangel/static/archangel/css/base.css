@@ -4,18 +4,12 @@
     font-family: "Raleway", sans-serif !important;
 }
 
-:root {
-    --primary-color: #B32428;
-    --secondary-color: #FEE5E6;
-    --tertiary-color: #B06C72;
-
-    --white-color: #FFFFFF;
-    --washed-white: #E1E1E1;
-    --primary-gray: #999999;
-}
-
 html,
 body {
     width: 100%;
     height: 100%;
+}
+
+a {
+    font-size: 15px;
 }

@@ -12,7 +12,7 @@ from core.managers import CustomUserManager
 
 class CustomUser(AbstractUser):
     username = None
-    
+
     email = models.EmailField(('email address'), unique=True)
     email_verified = models.BooleanField(default=False)
 
@@ -23,6 +23,7 @@ class CustomUser(AbstractUser):
 
     def __str__(self) -> str:
         return self.email
+
 
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def create_auth_token(sender, instance=None, created=False, **kwargs):

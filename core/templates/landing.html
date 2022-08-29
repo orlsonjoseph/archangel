@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %} Welcome {% endblock %}
+{% block title %} Home {% endblock %}
 
 {% block head %}
 <link href="{% static 'core/css/landing.css' %}" rel="stylesheet"
@@ -27,7 +27,8 @@
                 <h4 class="text-white-75 mb-5">
                     Dynamic. Intuitive. Visual.
                 </h4>
-                <a class="btn btn-primary btn-xl" href="#about">Get started</a>
+                <a class="btn btn-primary btn-xl" href="{% url 'core:register'
+                    %}">Get started</a>
                 <a class="btn btn-light btn-xl" href="#about">Download
                     extension</a>
             </div>
@@ -36,7 +37,7 @@
 </header>
 
 <!-- Footer-->
-<footer class="bg-light py-5">
+<footer class="bg-light py-3">
     <div class="container px-4 px-lg-5"><div class="small text-center
             text-muted">Copyright &copy; {% now 'Y' %}- Nodraft </div></div>
 </footer>

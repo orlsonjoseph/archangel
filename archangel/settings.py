@@ -28,12 +28,14 @@ IS_HEROKU = "DYNO" in os.environ
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-1=!&q)y@1^o+6m^!*@f9-*f^+i2#y!z_54h4r69fa_pkaj^-^&'
-if 'SECRET_KEY' in os.environ: SECRET_KEY = os.environ["SECRET_KEY"]
+if 'SECRET_KEY' in os.environ:
+    SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-if IS_HEROKU: ALLOWED_HOSTS = ["*"]
+if IS_HEROKU:
+    ALLOWED_HOSTS = ["*"]
 else:
     ALLOWED_HOSTS = [
         # Development
@@ -49,7 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     # Staticfiles serving
-    "whitenoise.runserver_nostatic",
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 
     # Third-party applications
@@ -114,7 +116,7 @@ if "DATABASE_URL" in os.environ:
 
     # Enable test database if found in CI environment.
     if "CI" in os.environ:
-        DATABASES["default"]["TEST"] = DATABASES["default"] 
+        DATABASES["default"]["TEST"] = DATABASES["default"]
 
 # Authentication configuration
 
@@ -124,7 +126,7 @@ AUTH_USER_MODEL = 'core.CustomUser'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'archangel.backends.CustomUserModelBackend',
-    ]
+]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -171,15 +173,22 @@ USE_TZ = True
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = "static/"
 
+STATICFILES_DIRS = [
+    BASE_DIR / 'archangel/static'
+]
+
 STATICFILES_FINDER = [
-    'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
 ]
 
 # Enable WhiteNoise's GZip compression of static assets.
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # Test Runner Config
+
+
 class HerokuDiscoverRunner(DiscoverRunner):
     """Test Runner for Heroku CI, which provides a database for you.
     This requires you to set the TEST database (done for you by settings().)"""
@@ -187,6 +196,7 @@ class HerokuDiscoverRunner(DiscoverRunner):
     def setup_databases(self, **kwargs):
         self.keepdb = True
         return super(HerokuDiscoverRunner, self).setup_databases(**kwargs)
+
 
 # Use HerokuDiscoverRunner on Heroku CI
 if "CI" in os.environ:

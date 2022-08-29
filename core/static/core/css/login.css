@@ -1,13 +1,13 @@
 body {
     background: white;
-    color: gray;
+    color: var(--gray-400);
 }
 
 a {
     -webkit-transition: .3s all ease;
     -o-transition: .3s all ease;
     transition: .3s all ease;
-    color: var(--bs-primary);
+    color: var(--primary);
 }
 
 a:hover,
@@ -29,14 +29,12 @@ h4,
 }
 
 .bg-primary {
-    background: var(--bs-primary) !important;
+    background: var(--primary) !important;
 }
 
 section {
-    padding: 3em 0;
-
-    position: relative;
-    top: 5rem;
+    padding: 10% 0;
+    height: 100vh;
 }
 
 .img {
@@ -49,6 +47,7 @@ section {
     width: 100%;
     overflow: hidden;
     background: white;
+
     -webkit-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
     -moz-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
     box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
@@ -74,7 +73,7 @@ section {
 .form-group a:hover,
 .form-group a:focus {
     text-decoration: underline;
-    color: var(--secondary-color);
+    color: var(--secondary);
 }
 
 .form-control {
@@ -112,7 +111,7 @@ section {
     outline: none !important;
     -webkit-box-shadow: none;
     box-shadow: none;
-    border: 1px solid var(--bs-primary);
+    border: 1px solid var(--primary);
 }
 
 .field-icon {
@@ -144,7 +143,7 @@ section {
     text-transform: uppercase;
     font-size: 12px;
     letter-spacing: 1px;
-    color: var(--bs-primary);
+    color: var(--primary);
     font-weight: 500;
 }
 
@@ -166,7 +165,7 @@ section {
 
 .social-media .social-icon:hover,
 .social-media .social-icon:focus {
-    background: var(--bs-primary);
+    background: var(--primary);
 }
 
 .social-media .social-icon:hover i,
@@ -189,25 +188,25 @@ section {
 }
 
 .btn.btn-primary {
-    background: var(--bs-primary) !important;
-    border: 1px solid var(--bs-primary) !important;
+    background: var(--primary) !important;
+    border: 1px solid var(--primary) !important;
     color: #fff !important;
 }
 
 .btn.btn-primary:hover {
-    border: 1px solid var(--bs-primary);
+    border: 1px solid var(--primary);
     background: transparent;
-    color: var(--bs-primary);
+    color: var(--primary);
 }
 
 .btn.btn-primary.btn-outline-primary {
-    border: 1px solid var(--bs-primary);
+    border: 1px solid var(--primary);
     background: transparent;
-    color: var(--bs-primary);
+    color: var(--primary);
 }
 
 .btn.btn-primary.btn-outline-primary:hover {
     border: 1px solid transparent;
-    background: var(--bs-primary);
+    background: var(--primary);
     color: #fff;
 }
