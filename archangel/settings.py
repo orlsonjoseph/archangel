@@ -62,7 +62,7 @@ INSTALLED_APPS = [
     'api',
     'bookmark',
     'core',
-    'renderer',
+    'view',
 ]
 
 MIDDLEWARE = [
@@ -76,6 +76,9 @@ MIDDLEWARE = [
 
     # Static files
     'whitenoise.middleware.WhiteNoiseMiddleware',
+
+    # Custom middlewares
+    'archangel.middleware.AjaxMiddleware',
 ]
 
 ROOT_URLCONF = 'archangel.urls'

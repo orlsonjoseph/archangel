@@ -13,14 +13,14 @@ def landing(request, template='landing.html'):
 
 def register(request, template='register.html'):
     if request.user.is_authenticated:
-        return redirect('renderer:bookmarks')
+        return redirect('view:dashboard')
 
     return render(request, template)
 
 
 def login(request, template='login.html'):
     if request.user.is_authenticated:
-        return redirect('renderer:bookmarks')
+        return redirect('view:dashboard')
 
     if request.method == 'POST':
         email = request.POST['email']
@@ -29,7 +29,7 @@ def login(request, template='login.html'):
         user = authenticate(email=email, password=password)
         if user is not None:
             django_login(request, user)
-            return redirect('renderer:bookmarks')
+            return redirect('view:dashboard')
         else:
             return render(request, template)
 
