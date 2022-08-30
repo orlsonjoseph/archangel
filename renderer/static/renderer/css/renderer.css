@@ -1,0 +1,34 @@
+div.input-search-bar {
+    background-color: var(--white);
+
+    border-bottom: 0.5px solid var(--gray-light);
+}
+
+.input-search {
+    border-radius: 0;
+    background-color: var(--light);
+
+    box-shadow: none;
+    border: none;
+    border-right: 1px solid var(--gray-light);
+}
+
+.input-search::placeholder {
+    color: var(--gray-mid);
+}
+
+.input-search:focus {
+    box-shadow: none;
+}
+
+.btn-search {
+    background-color: var(--primary);
+    color: var(--white);
+
+    border-radius: 0;
+    border-color: var(--primary);
+}
+
+.btn-search:hover {
+    color: var(--white);
+}

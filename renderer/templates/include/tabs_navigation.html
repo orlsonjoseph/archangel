@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-12">
+        <ul class="nav nav-tabs nav-fill my-2">
+            <li class="nav-item">
+                <a href="{% url 'renderer:favorites' %}"
+                    {% if request.resolver_match.url_name == "favorites" %}
+                    class="nav-link active" aria-current="page"
+                    {% else %}
+                    class="nav-link"
+                    {% endif %}>Favorites</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'renderer:bookmarks' %}"
+                    {% if request.resolver_match.url_name == "bookmarks" %}
+                    class="nav-link active" aria-current="page"
+                    {% else %}
+                    class="nav-link"
+                    {% endif %}>Bookmarks</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'renderer:collections' %}"
+                    {% if request.resolver_match.url_name == "collections" %}
+                    class="nav-link active" aria-current="page"
+                    {% else %}
+                    class="nav-link"
+                    {% endif %}>Collections</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'renderer:archive' %}"
+                    {% if request.resolver_match.url_name == "archive" %}
+                    class="nav-link active" aria-current="page"
+                    {% else %}
+                    class="nav-link"
+                    {% endif %}>Archive</a>
+            </li>
+        </ul>
+    </div>
+</div>

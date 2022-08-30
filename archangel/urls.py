@@ -24,5 +24,7 @@ urlpatterns = [
     path('api/', include('api.urls', namespace='api')),
     path('core/', include('core.urls', namespace='core')),
 
-    path('', core_views.landing, name='home')
+    path('r/', include('renderer.urls', namespace='renderer')),
+
+    path('', core_views.landing, name='landing')
 ]
