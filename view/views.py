@@ -14,7 +14,7 @@ def dashboard(request, template='dashboard.html'):
 
 
 @login_required
-def bookmarks(request, template='include/views/bookmarks.html'):
+def library(request, template='include/views/library.html'):
     if request.is_ajax():
         bookmarks = ["Hello", "Darkness", "My", "Old", "Friend", "I", "Wanted"]
         content = loader.get_template(template)
@@ -23,18 +23,6 @@ def bookmarks(request, template='include/views/bookmarks.html'):
             'message': 'Add a bookmark using the nodraft extension',
 
             'bookmarks': bookmarks,
-        }
-        return HttpResponse(content.render(context, request))
-    return HttpResponse('Bad request')
-
-
-@login_required
-def collections(request, template='include/views/collections.html'):
-    if request.is_ajax():
-        content = loader.get_template(template)
-        context = {
-            'svg': static('archangel/img/undraw_collections.svg'),
-            'message': 'Organize your bookmarks in relevant collections'
         }
         return HttpResponse(content.render(context, request))
     return HttpResponse('Bad request')

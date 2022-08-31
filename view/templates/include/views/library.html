@@ -1,0 +1,44 @@
+
+
+<div class="row">
+    <div class="col d-none d-lg-block container-fluid">
+        <div class="row">
+            <div class="col">
+                <p class="font-weight-light mb-1"> collections </p>
+
+                <div class="collections-buttons">
+                    <button type="button" class="btn btn-light shadow-none"
+                        data-bs-toggle="button" autocomplete="off">
+                        product design
+                    </button>
+
+                    <button type="button" class="btn btn-light shadow-none"
+                        data-bs-toggle="button" autocomplete="off">
+                        marketing
+                    </button>
+
+                    <button type="button" class="btn btn-light shadow-none"
+                        data-bs-toggle="button" autocomplete="off">
+                        travel
+                    </button>
+
+                    <button type="button" class="btn btn-light shadow-none"
+                        data-bs-toggle="button" autocomplete="off">
+                        computer science
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-9 px-3 py-0 container-fluid">
+        <div class="row">
+            {% for bookmark in bookmarks %}
+            {% include 'include/components/bookmark.html' with bookmark=bookmark %}
+            {% empty %}
+            {% include 'include/components/empty.html' with svg=svg
+            message=message %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

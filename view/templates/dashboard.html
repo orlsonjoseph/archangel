@@ -7,7 +7,7 @@
 <link href="{% static 'view/css/view.css' %}" rel="stylesheet"
     type="text/css" />
 
-<link href="{% static 'view/css/bookmark.css' %}" rel="stylesheet"
+<link href="{% static 'view/css/library.css' %}" rel="stylesheet"
     type="text/css" />
 {% endblock %}
 
@@ -19,39 +19,10 @@
 {% include 'include/content/search_bar.html' %}
 {% include 'include/content/tabs_navigation.html' %}
 
-<div class="row">
-    <div class="col d-none d-lg-block">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col">
-                    <p class="font-weight-light mb-1"> collections </p>
-
-                    <div class="collections-buttons">
-                        <button type="button" class="btn btn-light shadow-none"
-                            data-bs-toggle="button" autocomplete="off">
-                            product design
-                        </button>
-
-                        <button type="button" class="btn btn-light shadow-none"
-                            data-bs-toggle="button" autocomplete="off">
-                            marketing
-                        </button>
-
-                        <button type="button" class="btn btn-light shadow-none"
-                            data-bs-toggle="button" autocomplete="off">
-                            travel
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="nodraft-inject" data-url="{% url 'view:bookmarks' %}"
-        class="col-12 col-lg-9 px-3 py-0 container-fluid">
-        <!-- Inject HTML content through AJAX -->
-    </div>
+<div id="nodraft-inject" data-url="{% url 'view:library' %}">
+    <!-- Inject HTML content through AJAX -->
 </div>
+
 
 {% endblock %}
 

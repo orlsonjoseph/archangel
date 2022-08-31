@@ -9,7 +9,6 @@ urlpatterns = [
     path('dashboard', views.dashboard, name='dashboard'),
 
     path('archive', views.archive, name='archive'),
-    path('bookmarks', views.bookmarks, name='bookmarks'),
-    path('collections', views.collections, name='collections'),
     path('favorites', views.favorites, name='favorites'),
+    path('library', views.library, name='library'),
 ]

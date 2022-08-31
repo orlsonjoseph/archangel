@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from bookmark.models import Bookmark, BookmarkInstance
+
+admin.site.register(Bookmark)
+admin.site.register(BookmarkInstance)

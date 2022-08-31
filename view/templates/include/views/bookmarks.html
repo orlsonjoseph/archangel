@@ -1,7 +1,0 @@
-<div class="row">
-    {% for bookmark in bookmarks %}
-    {% include 'include/components/bookmark.html' with bookmark=bookmark %}
-    {% empty %}
-    {% include 'include/components/empty.html' with svg=svg message=message %}
-    {% endfor %}
-</div>

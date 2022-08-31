@@ -13,6 +13,7 @@ from rest_framework.decorators import api_view, authentication_classes, permissi
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def create_bookmark_instance(request, format=None):
+    print(request)
     return Response({
         'greetings': 'Hello, world!'
     }, status=status.HTTP_200_OK)
