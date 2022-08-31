@@ -1,8 +1,8 @@
  <!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light py-3"
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-1"
     id="mainNav">
-    <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="#page-top">Nodraft</a>
+    <div class="container px-0">
+        <a class="navbar-brand mb-0 h1" href="#page-top">Nodraft</a>
         <button class="navbar-toggler navbar-toggler-right" type="button"
             data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
             aria-controls="navbarResponsive" aria-expanded="false"
@@ -10,12 +10,35 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto mr-md-3">
-                <li class="nav-item active">
-                    <a href="{% url 'core:connect' %}" class="nav-link">Connect</a>
-                </li>
-                <li class="nav-item active">
-                    <a href="{% url 'core:logout' %}" class="nav-link">Log out</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://via.placeholder.com/24"
+                            alt="Profile image">
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item"
+                                href="{% url 'core:connect'%}">
+                                <i class="bi bi-link-45deg mr-2"></i>
+                                Connect
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-gear mr-2"></i>
+                                Settings
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item"
+                                href="{% url 'core:logout' %}">
+                                <i class="bi bi-escape mr-2"></i>
+                                Log out
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>

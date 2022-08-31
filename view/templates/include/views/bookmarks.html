@@ -1,6 +1,6 @@
-<div class="col-12">
+<div class="row">
     {% for bookmark in bookmarks %}
-    Hello
+    {% include 'include/components/bookmark.html' with bookmark=bookmark %}
     {% empty %}
     {% include 'include/components/empty.html' with svg=svg message=message %}
     {% endfor %}

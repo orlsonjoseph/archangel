@@ -16,10 +16,13 @@ def dashboard(request, template='dashboard.html'):
 @login_required
 def bookmarks(request, template='include/views/bookmarks.html'):
     if request.is_ajax():
+        bookmarks = ["Hello", "Darkness", "My", "Old", "Friend", "I", "Wanted"]
         content = loader.get_template(template)
         context = {
             'svg': static('archangel/img/undraw_bookmarks.svg'),
             'message': 'Add a bookmark using the nodraft extension',
+
+            'bookmarks': bookmarks,
         }
         return HttpResponse(content.render(context, request))
     return HttpResponse('Bad request')

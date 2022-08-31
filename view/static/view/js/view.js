@@ -9,12 +9,18 @@ function retrievePage() {
       console.log("Something went wrong!");
     },
   });
+
+  setActive();
 }
 
-function requestPageRetrieval(event) {
-  event.preventDefault();
+function setActive() {
+  const current = $("#nodraft-inject").data("url");
 
-  alert("clicked");
+  $(".nodraft-dynamic").each(function () {
+    if (current === $(this).attr("href")) {
+      $(this).addClass("active");
+    } else $(this).removeClass("active");
+  });
 }
 
 $(window).on("load", function () {
@@ -22,11 +28,11 @@ $(window).on("load", function () {
   retrievePage();
 
   // Bind links for dynamic loading
-  $(".nav-link").click(function (event) {
+  $(".nodraft-dynamic").click(function (event) {
     event.preventDefault();
 
     const url = $(this).attr("href");
-    $("#nodraft-inject").data("url", url);
+    $("#nodraft-inject").data("url", url).attr("data-url", url);
 
     retrievePage();
   });

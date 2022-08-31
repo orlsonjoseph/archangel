@@ -1,0 +1,23 @@
+.media {
+    border: 1px solid var(--gray-light);
+}
+
+.media-body {
+    font-size: 14px;
+}
+
+.media-body .text-muted {
+    font-size: 12px;
+}
+
+div.collections-buttons button.btn.btn-light {
+    padding: 4px 8px;
+    margin: 2px 0px;
+
+    font-size: 13px;
+}
+
+div.collections-buttons button.btn.btn-light.active {
+    background-color: var(--primary);
+    color: var(--white);
+}
