@@ -3,15 +3,20 @@
 
 <div class="card m-1">
     <div class="card-body p-2">
-        <h6 class="card-title font-weight-bold m-1">
-            {{ bookmark.bookmark.title }}
-        </h6>
+        <div class="position-relative">
+            <h6 class="card-title font-weight-bold m-1">
+                {{ bookmark.bookmark.title }}
+            </h6>
 
-        <p class="card-text text-muted m-0 mr-4">
-            <a href="{{ bookmark.bookmark.url }}" rel="noreferrer bookmark" target="_blank"
-                class="link-unstyled stretched-link">
-                {{ bookmark.bookmark.url }}
-            </a> <br>
+            <p class="card-text text-muted m-0 mr-4">
+                <a href="{{ bookmark.bookmark.url }}" rel="noreferrer bookmark" target="_blank"
+                    class="link-unstyled stretched-link">
+                    {{ bookmark.bookmark.url }}
+                </a>
+            </p>
+        </div>
+
+        <p class="text-muted m-0">
             {{ bookmark.created | date:"jS b Y" }}
             ・ <a href="#"> Add to Favorites </a>
             ・ <a href="#"><i class="bi bi-pencil-square"></i></a>
