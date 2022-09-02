@@ -1,9 +1,11 @@
 * {
-    border-radius: 0 !important;
-
     font-family: "Raleway", sans-serif !important;
-    --gray-mid: #bbb;
-    --gray-light: #eee;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Playfair Display", Helvetica, serif !important;
 }
 
 html,
@@ -12,10 +14,30 @@ body {
     height: 100%;
 }
 
-a {
-    font-size: 15px;
+input.form-control,
+input.form-control::placeholder {
+    font-family: "Raleway", sans-serif;
 }
 
-input.form-control {
-    font-family: Roboto, sans-serif !important;
+.link-unstyled,
+.link-unstyled:visited,
+.link-unstyled:hover,
+.link-unstyled:active,
+.link-unstyled:focus,
+.link-unstyled:active:hover {
+    font-style: inherit;
+    color: inherit;
+    background-color: transparent;
+    font-size: inherit;
+    text-decoration: none;
+    font-variant: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    border-radius: inherit;
+    border: inherit;
+    outline: inherit;
+    box-shadow: inherit;
+    padding: inherit;
+    vertical-align: inherit;
 }

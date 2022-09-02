@@ -1,28 +1,23 @@
 {% load static %}
 
-<div class="col-md-6 col-12 m-0 p-1">
-    <div class="media pl-2 py-2">
 
-        <div class="media-body">
-            <h6 class="mt-0 font-weight-bold">
-                Writing an Interpreter From Scratch | Toptal
-            </h6>
+<div class="card m-1">
+    <div class="card-body p-2">
+        <h6 class="card-title font-weight-bold m-1">
+            {{ bookmark.bookmark.title }}
+        </h6>
 
-            <p class="media-text m-0">
-                {% lorem 15 w %} <br>
-                <span class="text-muted">
-                    toptal.com ・ {% now "jS F Y" %}
-                </span>
-            </p>
+        <p class="card-text text-muted m-0 mr-4">
+            <a href="{{ bookmark.bookmark.url }}" rel="noreferrer bookmark" target="_blank"
+                class="link-unstyled stretched-link">
+                {{ bookmark.bookmark.url }}
+            </a> <br>
+            {{ bookmark.created | date:"jS b Y" }}
+            ・ <a href="#"> Add to Favorites </a>
+            ・ <a href="#"><i class="bi bi-pencil-square"></i></a>
+            ・ <a href="#"><i class="bi bi-trash3"></i></a>
+        </p>
 
-            <p class="media-footer m-0">
-                <span class="text-muted">
-                    Add to Favorites ・ Remove
-                </span>
-            </p>
-        </div>
-        <img class="align-self-end mr-2" src="https://via.placeholder.com/48"
-            alt="Card image"/>
-
+        <img src="{{ bookmark.bookmark.favicon_url }}" alt="Card image"/>
     </div>
 </div>

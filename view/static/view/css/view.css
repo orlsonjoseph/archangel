@@ -14,7 +14,7 @@ div.input-search-bar {
 }
 
 .input-search::placeholder {
-    color: var(--gray-mid);
+    color: var(--gray);
 }
 
 .input-search:focus {
@@ -25,8 +25,7 @@ div.input-search-bar {
     background-color: var(--primary);
     color: var(--white);
 
-    border-radius: 0;
-    border-color: var(--primary);
+    border: 0;
 }
 
 .btn-search:hover {

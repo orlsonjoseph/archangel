@@ -12,14 +12,15 @@ class Bookmark(models.Model):
     url = models.URLField(unique=True)
 
     has_favicon = models.BooleanField(default=False)
-    favicon_checked = models.DateTimeField(default=datetime.now)
+    favicon_url = models.URLField(unique=False, blank=True)
 
-    description = models.CharField(max_length=100)
+    title = models.CharField(max_length=255)
+    summary = models.CharField(max_length=255, blank=True)
 
-    added = models.DateTimeField(default=datetime.now)
+    added = models.DateTimeField(auto_now_add=True)
 
     def get_favicon_url(force=False):
-        return None
+        return self.favicon_url
 
     def __str__(self) -> str:
         return self.url
@@ -34,16 +35,15 @@ class BookmarkInstance(models.Model):
     user = models.ForeignKey(CustomUser, related_name='saved_bookmarks',
                              verbose_name='user', on_delete=models.CASCADE)
 
-    note = models.TextField(blank=True)
+    saved = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)
 
-    saved = models.DateTimeField(default=datetime.now)
-    created = models.DateTimeField(default=datetime.now)
-
-    def save(self, force_insert=False, force_update=False):
-        bookmark, created = Bookmark.objects.get_or_create(url=self.url)
+    def save(self, url, force_insert=False, force_update=False):
+        bookmark, created = Bookmark.objects.get_or_create(url=url)
         self.bookmark = bookmark
 
         super(BookmarkInstance, self).save(force_insert, force_update)
+        return created
 
     def delete(self):
         bookmark = self.bookmark

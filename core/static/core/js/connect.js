@@ -1,6 +1,6 @@
 $(window).on("load", function () {
   const authentication_token = $("#auth_token").val();
-  const editorExtensionId = "bjemlddlpahnmmjidgpobkbpkdackejp";
+  const editorExtensionId = "mchcicmnbpcopfmklilbmbjgdmhlkapf";
 
   $("#connectForm").submit(function (event) {
     event.preventDefault();

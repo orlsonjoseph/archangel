@@ -4,9 +4,9 @@
     <div class="col d-none d-lg-block container-fluid">
         <div class="row">
             <div class="col">
-                <p class="font-weight-light mb-1"> collections </p>
+                <h5 class="my-3"> collections </h5>
 
-                <div class="collections-buttons">
+                <div class="collections-buttons my-3">
                     <button type="button" class="btn btn-light shadow-none"
                         data-bs-toggle="button" autocomplete="off">
                         product design
@@ -27,12 +27,19 @@
                         computer science
                     </button>
                 </div>
+
+                <div class="collections-footer my-3">
+                    <button type="button" class="btn btn-primary btn-sm shadow-none my-1"
+                        data-bs-toggle="button" autocomplete="off">
+                        new collection
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="col-12 col-lg-9 px-3 py-0 container-fluid">
-        <div class="row">
+        <div class="card-columns">
             {% for bookmark in bookmarks %}
             {% include 'include/components/bookmark.html' with bookmark=bookmark %}
             {% empty %}

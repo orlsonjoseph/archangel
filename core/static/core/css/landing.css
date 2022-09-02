@@ -22,7 +22,7 @@ hr.divider {
     height: 0.2rem;
     max-width: 3.25rem;
     margin: 1.5rem auto;
-    background-color: var(--bs-primary);
+    background-color: var(--primary);
     opacity: 1;
 }
 

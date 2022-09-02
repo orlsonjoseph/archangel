@@ -5,6 +5,8 @@ from django.http import HttpResponse, JsonResponse
 from django.template import loader
 from django.templatetags.static import static
 
+from bookmark.models import BookmarkInstance
+
 # Create your views here.
 
 
@@ -16,7 +18,7 @@ def dashboard(request, template='dashboard.html'):
 @login_required
 def library(request, template='include/views/library.html'):
     if request.is_ajax():
-        bookmarks = ["Hello", "Darkness", "My", "Old", "Friend", "I", "Wanted"]
+        bookmarks = request.user.saved_bookmarks.all()
         content = loader.get_template(template)
         context = {
             'svg': static('archangel/img/undraw_bookmarks.svg'),
