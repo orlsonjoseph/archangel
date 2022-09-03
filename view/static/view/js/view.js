@@ -1,6 +1,8 @@
 function retrievePage() {
+  const url = $("#nodraft-inject").data("url");
+
   $.ajax({
-    url: $("#nodraft-inject").data("url"),
+    url: url,
     type: "GET",
     success: function (response) {
       $("#nodraft-inject").html(response);

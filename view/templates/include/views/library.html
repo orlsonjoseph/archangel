@@ -38,14 +38,7 @@
         </div>
     </div>
 
-    <div class="col-12 col-lg-9 px-3 py-0 container-fluid">
-        <div class="card-columns">
-            {% for bookmark in bookmarks %}
-            {% include 'include/components/bookmark.html' with bookmark=bookmark %}
-            {% empty %}
-            {% include 'include/components/empty.html' with svg=svg
-            message=message %}
-            {% endfor %}
-        </div>
+    <div class="col-12 col-lg-9 px-3 py-0 container-fluid" id="bookmarks-view">
+        {% include 'include/components/bookmarks_view.html' with bookmark_list=bookmark_list %}
     </div>
 </div>

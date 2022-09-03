@@ -21,11 +21,17 @@
     font-size: 12px;
 }
 
-.card-body img {
+.card-body .bookmark-img {
     position: absolute;
 
     bottom: .5rem;
     right: .5rem;
+
+    padding: .15rem;
+}
+
+.card-body .bookmark-img img {
+    max-height: 48px;
 }
 
 div.collections-buttons button.btn.btn-light {

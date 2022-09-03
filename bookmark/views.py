@@ -7,6 +7,10 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
 
+from django.http import HttpResponse, JsonResponse
+from django.template import loader
+from django.templatetags.static import static
+
 from bookmark.models import BookmarkInstance
 
 
@@ -40,3 +44,26 @@ def is_page_bookmarked(request, format=None):
     return Response({
         'bookmarked': False,
     })
+
+
+def search_bookmarks(request, template='include/views/search.html'):
+    content = loader.get_template(template)
+
+    if request.is_ajax() and request.method == 'GET':
+        query = request.GET.get('query', None)
+
+        if query is None:
+            return HttpResponse('Query is required', status=400)
+
+        bookmarks = BookmarkInstance.objects.filter(
+            user=request.user, bookmark__title__icontains=query)
+
+        if bookmarks:
+            context = {"bookmark_list": bookmarks}
+        else:
+            context = {
+                'svg': static('archangel/img/undraw_search.svg'),
+                'message': 'No results found'
+            }
+        return HttpResponse(content.render(context, request), status=200)
+    return HttpResponse('Bad request', status=400)

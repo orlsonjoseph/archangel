@@ -1,0 +1,9 @@
+{% if bookmark_list %}
+<div class="card-columns">
+    {% for bookmark in bookmark_list %}
+    {% include 'include/components/bookmark.html' with bookmark=bookmark %}
+    {% endfor %}
+</div>
+{% else %}
+{% include 'include/components/empty.html' with svg=svg message=message %}
+{% endif %}

@@ -21,10 +21,10 @@ def library(request, template='include/views/library.html'):
         bookmarks = request.user.saved_bookmarks.all()
         content = loader.get_template(template)
         context = {
-            'svg': static('archangel/img/undraw_bookmarks.svg'),
+            'svg': static('archangel/img/undraw_library.svg'),
             'message': 'Add a bookmark using the nodraft extension',
 
-            'bookmarks': bookmarks,
+            'bookmark_list': bookmarks,
         }
         return HttpResponse(content.render(context, request))
     return HttpResponse('Bad request')

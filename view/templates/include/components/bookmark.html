@@ -4,7 +4,7 @@
 <div class="card m-1">
     <div class="card-body p-2">
         <div class="position-relative">
-            <h6 class="card-title font-weight-bold m-1">
+            <h6 class="card-title font-weight-bold m-0 mb-1">
                 {{ bookmark.bookmark.title }}
             </h6>
 
@@ -19,10 +19,13 @@
         <p class="text-muted m-0">
             {{ bookmark.created | date:"jS b Y" }}
             ・ <a href="#"> Add to Favorites </a>
-            ・ <a href="#"><i class="bi bi-pencil-square"></i></a>
+            ・ <a href="#"><i class="bi bi-pen"></i></a>
             ・ <a href="#"><i class="bi bi-trash3"></i></a>
         </p>
 
-        <img src="{{ bookmark.bookmark.favicon_url }}" alt="Card image"/>
+        <div class="bookmark-img">
+            <img src="{{ bookmark.bookmark.favicon_url }}" alt="bookmark image"
+                class="bookmark-favicon" />
+        </div>
     </div>
 </div>
