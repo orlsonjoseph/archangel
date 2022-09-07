@@ -1,11 +1,11 @@
 {% load static %}
 
 
-<div class="card m-1">
+<div class="card m-1" data-bookmark-show-url="{% url 'api:show_bookmark' bookmark.id %}">
     <div class="card-body p-2">
         <div class="position-relative">
             <h6 class="card-title font-weight-bold m-0 mb-1">
-                {{ bookmark.bookmark.title }}
+                {{ bookmark.title }}
             </h6>
 
             <p class="card-text text-muted m-0 mr-4">
@@ -18,9 +18,13 @@
 
         <p class="text-muted m-0">
             {{ bookmark.created | date:"jS b Y" }}
-            ・ <a href="#"> Add to Favorites </a>
-            ・ <a href="#"><i class="bi bi-pen"></i></a>
-            ・ <a href="#"><i class="bi bi-trash3"></i></a>
+            <button type="button" class="btn btn-link p-0 shadow-none" data-bs-toggle="modal"
+                data-bs-target="#editModal">
+                <span> Edit </span>
+            </button>
+            <button type="button" class="btn btn-link p-0 shadow-none">
+                <span> Remove </span>
+            </button>
         </p>
 
         <div class="bookmark-img">

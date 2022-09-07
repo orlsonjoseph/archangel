@@ -5,5 +5,7 @@
     {% endfor %}
 </div>
 {% else %}
+{% if message and svg %}
 {% include 'include/components/empty.html' with svg=svg message=message %}
+{% endif %}
 {% endif %}

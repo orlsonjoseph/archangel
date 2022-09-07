@@ -14,7 +14,6 @@ class Bookmark(models.Model):
     has_favicon = models.BooleanField(default=False)
     favicon_url = models.URLField(unique=False, blank=True)
 
-    title = models.CharField(max_length=255)
     summary = models.CharField(max_length=255, blank=True)
 
     added = models.DateTimeField(auto_now_add=True)
@@ -34,6 +33,8 @@ class BookmarkInstance(models.Model):
         Bookmark, related_name='saved_instances', verbose_name='bookmark', on_delete=models.CASCADE)
     user = models.ForeignKey(CustomUser, related_name='saved_bookmarks',
                              verbose_name='user', on_delete=models.CASCADE)
+
+    title = models.CharField(max_length=255)
 
     saved = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)

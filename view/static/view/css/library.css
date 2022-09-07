@@ -17,7 +17,8 @@
     font-size: 14px;
 }
 
-.card-body .text-muted {
+.card-body .text-muted,
+.card-body .btn-link {
     font-size: 12px;
 }
 
@@ -32,6 +33,15 @@
 
 .card-body .bookmark-img img {
     max-height: 48px;
+}
+
+.card-body p button:hover,
+.card-body p button:focus {
+    text-decoration: none;
+}
+
+.card-body p button::before {
+    content: "・";
 }
 
 div.collections-buttons button.btn.btn-light {

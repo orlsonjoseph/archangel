@@ -12,4 +12,6 @@ urlpatterns = [
     path('bookmark/is-bookmarked', views.is_page_bookmarked,
          name='is_page_bookmarked'),
     path('bookmark/search', views.search_bookmarks, name='search_bookmarks'),
+    path('bookmark/show/<int:pk>/',
+         views.show_bookmark_instance, name='show_bookmark'),
 ]

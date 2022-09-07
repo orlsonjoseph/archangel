@@ -19,6 +19,8 @@
 {% include 'include/content/search_bar.html' %}
 {% include 'include/content/tabs_navigation.html' %}
 
+{% include 'include/components/edit_modal.html' %}
+
 <div id="nodraft-inject" data-url="{% url 'view:library' %}">
     <!-- Inject HTML content through AJAX -->
 </div>
@@ -26,5 +28,6 @@
 
 {% block scripts %}
 <script defer src="{% static 'view/js/search.js' %}"></script>
+<script defer src="{% static 'view/js/edit_modal.js' %}"></script>
 <script defer src="{% static 'view/js/view.js' %}"></script>
 {% endblock%}
